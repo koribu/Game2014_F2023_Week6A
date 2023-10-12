@@ -7,6 +7,8 @@ public class BulletBehavior : MonoBehaviour
     [SerializeField]
     Boundry _offLimit;
 
+    BulletTypes _type;
+
     Vector3 _direction;
     [SerializeField]
     float _speed = 5;
@@ -29,7 +31,7 @@ public class BulletBehavior : MonoBehaviour
     {
         if (transform.position.y > _offLimit.max || transform.position.y < _offLimit.min)
         {
-            _manager.ReturnBullet(gameObject);
+            _manager.ReturnBullet(gameObject,_type);
         }
     }
 
@@ -46,5 +48,10 @@ public class BulletBehavior : MonoBehaviour
     void Damage()
     {
 
+    }
+
+    public void SetType(BulletTypes type)
+    {
+        _type = type;
     }
 }

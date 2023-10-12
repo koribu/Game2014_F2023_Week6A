@@ -60,7 +60,8 @@ public class PlayerBehavour : MonoBehaviour
         _count++;
         if (_count > 5)
         {
-            _bulletManager.GetBullet(_bulletPoint.position, Vector3.up,Color.blue);
+             GameObject bullet = _bulletManager.GetBullet(BulletTypes.PLAYERBULLET);
+            bullet.transform.position = _bulletPoint.position;
 
             _count = 0;
         }

@@ -47,8 +47,7 @@ public class BulletManager : MonoBehaviour
     
     public GameObject GetBullet(BulletTypes type)
     {
-      
-
+     
         GameObject bullet;
 
         switch(type)
@@ -57,14 +56,14 @@ public class BulletManager : MonoBehaviour
                 if (_playerBulletPool.Count < 1)
                     _playerBulletPool.Enqueue(_factory.CreateBullet(BulletTypes.PLAYERBULLET));
 
-                return _playerBulletPool.Dequeue();
+                bullet = _playerBulletPool.Dequeue();
 
                 break;
             case BulletTypes.ENEMYBULLET:
                 if (_enemyBulletPool.Count < 1)
                     _enemyBulletPool.Enqueue(_factory.CreateBullet(BulletTypes.ENEMYBULLET));
 
-                return _enemyBulletPool.Dequeue();
+                bullet = _enemyBulletPool.Dequeue();
 
                 break;
             default:
@@ -73,23 +72,9 @@ public class BulletManager : MonoBehaviour
             break;
         }
 
-        
-
-       /* if (!Vector3.Equals(dir, Vector3.up))
-        {
-            if (Vector3.Equals(dir, Vector3.down))
-            {
-                bullet.transform.rotation = new Quaternion(0, 0, 0, 0);
-                bullet.transform.RotateAround(Vector3.forward, Mathf.Deg2Rad * 180);
-                //bullet.transform.rotation = Quaternion.AxisAngle(Vector3.forward, 1);
-            }
-
-        }
-
         bullet.SetActive(true);
-        bullet.transform.position = spawnPos;
-        bullet.GetComponent<BulletBehavior>().SetDirection(dir);
-        bullet.GetComponent<SpriteRenderer>().color = color;*/
+        return bullet;
+
         
     }
 
