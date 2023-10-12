@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5017041698934567100}
   - component: {fileID: 1549624213059094915}
   - component: {fileID: 3968013458162861182}
+  - component: {fileID: 3508576606366296271}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -136,3 +137,21 @@ MonoBehaviour:
   _offLimit:
     min: -5
     max: 5
+  _speed: 5
+--- !u!111 &3508576606366296271
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5276938905725603904}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: ec34602eea0a9284e9ae62c595015308, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: ec34602eea0a9284e9ae62c595015308, type: 2}
+  - {fileID: 7400000, guid: a2eb4f16729ef9b4391e30271c52035d, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
