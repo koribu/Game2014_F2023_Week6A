@@ -21,16 +21,30 @@ public class BulletBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += _direction * Time.deltaTime * _speed;
+        Move();
+        CheckBoundries();
+    }
 
-        if(transform.position.y > _offLimit.max || transform.position.y < _offLimit.min)
+    protected void CheckBoundries()
+    {
+        if (transform.position.y > _offLimit.max || transform.position.y < _offLimit.min)
         {
             _manager.ReturnBullet(gameObject);
         }
     }
 
+    protected void Move()
+    {
+        transform.position += _direction * Time.deltaTime * _speed;
+    }
+
     public void SetDirection(Vector3 dir)
     {
         _direction = dir;
+    }
+
+    void Damage()
+    {
+
     }
 }
